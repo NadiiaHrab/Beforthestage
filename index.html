@@ -34,7 +34,7 @@
             font-size: 1.1rem;
         }
 
-        /* --- НАВІГАЦІЯ --- */
+        /* --- НАВІГАЦІЯ (ЧИСТЕ ЛОГО) --- */
         nav {
             position: fixed;
             top: 0;
@@ -53,13 +53,16 @@
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
         }
 
+        /* Прибрано рамку та фон навколо лого */
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             letter-spacing: 8px;
+            /* Широкий інтервал для витонченості */
             text-decoration: none;
             color: white;
             text-transform: uppercase;
+            transition: var(--transition);
         }
 
         nav.scrolled .logo {
@@ -117,31 +120,46 @@
             font-size: 1.6rem;
             color: var(--gold);
             margin: 20px 0 40px;
+            font-weight: 300;
         }
 
-        /* --- СТРУКТУРА --- */
+        /* --- ЗАГАЛЬНІ СТИЛІ СЕКЦІЙ (ЗМЕНШЕНО ВІДСТУПИ) --- */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 80px 20px;
+            /* Зменшено відступи зверху/знизу */
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+            /* Зменшено відступ знизу заголовка */
         }
 
-        /* --- ДЛЯ КОГО --- */
+        /* --- СЕКЦІЯ ХТО Я --- */
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        /* --- СЕКЦІЯ ДЛЯ КОГО (ЦИФРИ) --- */
         .audience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px 80px;
+            gap: 40px 80px;
+            /* Зменшено відступи між елементами */
+            margin-top: 20px;
         }
 
         .audience-item {
             display: flex;
+            align-items: flex-start;
             gap: 20px;
         }
 
@@ -150,26 +168,35 @@
             font-size: 2rem;
             color: var(--gold);
             opacity: 0.4;
+            line-height: 1;
             font-style: italic;
         }
 
         .audience-text h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-weight: 400;
         }
 
-        /* --- ПОСЛУГИ --- */
+        .audience-text p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* --- СЕКЦІЯ ПОСЛУГИ (СІТКА) --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
+            /* Зменшено відступи */
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 35px 25px;
+            /* Зменшено внутрішні відступи */
             text-align: center;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
             border-top: 1px solid transparent;
@@ -186,16 +213,24 @@
             font-size: 1.4rem;
             margin-bottom: 15px;
             min-height: 60px;
+            /* Для вирівнювання заголовків */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* --- ЯК ПРАЦЮЄ --- */
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* --- РОЗДІЛ ЯК ЦЕ ПРАЦЮЄ --- */
         .process-steps {
             display: flex;
             justify-content: space-between;
             gap: 30px;
+            /* Зменшено відступи */
         }
 
         .step {
@@ -212,7 +247,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
+            /* Зменшено відступ знизу */
             color: var(--gold);
             font-family: 'Playfair Display', serif;
         }
@@ -224,7 +260,7 @@
             font-weight: 400;
         }
 
-        /* --- ЦІНИ (НОВА СЕКЦІЯ) --- */
+        /* --- РОЗДІЛ ЦІНИ --- */
         .pricing-list {
             max-width: 800px;
             margin: 0 auto;
@@ -234,7 +270,8 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            padding: 25px 0;
+            padding: 20px 0;
+            /* Зменшено відступи */
             border-bottom: 1px solid rgba(184, 150, 93, 0.2);
         }
 
@@ -255,6 +292,26 @@
             font-weight: 600;
             color: var(--gold);
             font-size: 1.2rem;
+        }
+
+        /* --- КНОПКИ ТА КОНТАКТИ --- */
+        .btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.4s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #967a4a;
+            transform: translateY(-3px);
         }
 
         /* --- ФУТЕР --- */
@@ -278,22 +335,10 @@
             font-size: 0.9rem;
             border-bottom: 1px solid var(--gold);
             padding-bottom: 3px;
+            transition: 0.3s;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 20px 50px;
-            background-color: var(--gold);
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: 0.4s;
-        }
-
+        /* --- АНІМАЦІЯ --- */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -305,6 +350,7 @@
             transform: translateY(0);
         }
 
+        /* --- АДАПТИВНІСТЬ --- */
         @media (max-width: 850px) {
 
             .services-grid,
@@ -316,6 +362,14 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
             }
 
             .pricing-item {
@@ -356,7 +410,7 @@
 
     <section class="container reveal" id="about">
         <h2 class="section-title">Хто я</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <div class="about-text">
             <p>Я Надія — музикант із професійною освітою. Допомагаю піаністам довести програму до досконалості, додаючи
                 впевненості перед виходом на сцену.</p>
         </div>
@@ -405,17 +459,17 @@
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">АНАЛІЗ</span>
                     <h3>Аналіз виступу</h3>
-                    <p>Професійний розбір відео, підсвічування сильних сторін і можливих покращень.</p>
+                    <p>Професійний розбір відео виступу, підсвічування сильних сторін і можливих покращень.</p>
                 </div>
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">ПІДГОТОВКА</span>
-                    <h3>Консультація</h3>
-                    <p>Точкові поради та художні штрихи для впевненого та яскравого звучання.</p>
+                    <h3>Консультація перед конкурсом</h3>
+                    <p>Точкові поради та останні художні штрихи для впевненого та яскравого звучання.</p>
                 </div>
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">ТЕРМІНОВО</span>
                     <h3>Експрес-розбір</h3>
-                    <p>Швидкий аналіз та конкретні рекомендації, коли залишилось мало часу.</p>
+                    <p>Коли залишилось мало часу — швидкий аналіз та конкретні рекомендації для результату.</p>
                 </div>
             </div>
         </div>
@@ -438,7 +492,7 @@
                 <div class="step">
                     <div class="step-dot">03</div>
                     <h4>Фідбек</h4>
-                    <p>Зустрічаємось онлайн або обговорюємо в Telegram.</p>
+                    <p>Ми зустрічаємось онлайн або обговорюємо деталі в Telegram.</p>
                 </div>
             </div>
         </div>
@@ -464,7 +518,7 @@
                     <span class="pricing-value">100 – 200 €</span>
                 </div>
                 <p style="margin-top: 30px; font-size: 0.85rem; font-style: italic; color: #888; text-align: center;">
-                    *Ціни можуть змінюватися залежно від складності програми та терміновості.
+                    *Ціни можуть змінюватися залежно від складності та терміновості.
                 </p>
             </div>
         </div>
@@ -475,9 +529,10 @@
         <div class="contact-links reveal">
             <a href="#" class="contact-link">Telegram</a>
             <a href="#" class="contact-link">WhatsApp</a>
-            <a href="#" class="contact-link">Email</a>
+            <a href="mailto:name@email.com" class="contact-link">Email</a>
         </div>
-        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.
+            PRESERVING ARTISTRY.</p>
     </footer>
 
     <script>
@@ -493,11 +548,14 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) reveals[i].classList.add("active");
+                if (elementTop < windowHeight - 100) {
+                    reveals[i].classList.add("active");
+                }
             }
         }
         reveal();
     </script>
+
 </body>
 
 </html>
