@@ -14,7 +14,7 @@
             --gold: #b8965d;
             --ivory: #fcfbf7;
             --white: #ffffff;
-            --transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
@@ -43,7 +43,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 25px 8%;
-            z-index: 2000;
+            z-index: 3000;
             transition: var(--transition);
         }
 
@@ -60,7 +60,7 @@
             text-decoration: none;
             color: white;
             text-transform: uppercase;
-            z-index: 2100;
+            z-index: 3100;
         }
 
         nav.scrolled .logo {
@@ -70,7 +70,6 @@
         .nav-links {
             display: flex;
             gap: 30px;
-            transition: 0.5s;
         }
 
         .nav-links a {
@@ -80,30 +79,37 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
+            transition: 0.3s;
         }
 
         nav.scrolled .nav-links a {
             color: var(--dark);
         }
 
-        /* Кнопка меню (бургер) */
+        /* МЕНЮ БУРГЕР */
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 6px;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
             cursor: pointer;
-            z-index: 2100;
+            z-index: 4000;
         }
 
         .menu-toggle span {
-            width: 25px;
-            height: 2px;
+            display: block;
+            width: 100%;
+            height: 3px;
             background-color: white;
-            transition: 0.3s;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
         nav.scrolled .menu-toggle span {
             background-color: var(--dark);
+            box-shadow: none;
         }
 
         /* --- HERO --- */
@@ -149,7 +155,7 @@
             margin-bottom: 45px;
         }
 
-        /* --- ДЛЯ КОГО --- */
+        /* --- ДЛЯ КОГО (Повний текст) --- */
         .audience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -164,7 +170,7 @@
 
         .audience-number {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--gold);
             opacity: 0.4;
             font-style: italic;
@@ -183,7 +189,7 @@
             margin: 0;
         }
 
-        /* --- ПОСЛУГИ --- */
+        /* --- ПОСЛУГИ (Повний текст) --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -220,7 +226,7 @@
             margin: 0;
         }
 
-        /* --- ЯК ЦЕ ПРАЦЮЄ --- */
+        /* --- ЯК ЦЕ ПРАЦЮЄ (Повернуто) --- */
         .process-steps {
             display: flex;
             justify-content: space-between;
@@ -257,7 +263,7 @@
             color: #666;
         }
 
-        /* --- ЦІНИ --- */
+        /* --- ЦІНИ (З крапками та приміткою) --- */
         .pricing-list {
             max-width: 800px;
             margin: 0 auto;
@@ -273,7 +279,7 @@
 
         .pricing-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             flex: 1;
         }
 
@@ -287,7 +293,7 @@
         .pricing-value {
             font-weight: 600;
             color: var(--gold);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         /* --- ФУТЕР --- */
@@ -337,8 +343,8 @@
             transform: translateY(0);
         }
 
-        /* --- АДАПТИВНІСТЬ --- */
-        @media (max-width: 900px) {
+        /* --- АДАПТИВНІСТЬ (Планшет + Мобільні) --- */
+        @media (max-width: 950px) {
             .menu-toggle {
                 display: flex;
             }
@@ -354,7 +360,8 @@
                 justify-content: center;
                 align-items: center;
                 gap: 35px;
-                z-index: 2050;
+                transition: 0.5s ease;
+                z-index: 3500;
             }
 
             .nav-links.active {
@@ -363,12 +370,12 @@
 
             .nav-links a {
                 color: var(--dark) !important;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .nav-active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 6px);
-                background: var(--dark) !important;
+                transform: rotate(45deg) translate(6px, 6px);
+                background-color: var(--dark) !important;
             }
 
             .nav-active span:nth-child(2) {
@@ -377,14 +384,13 @@
 
             .nav-active span:nth-child(3) {
                 transform: rotate(-45deg) translate(6px, -7px);
-                background: var(--dark) !important;
+                background-color: var(--dark) !important;
             }
 
             .services-grid,
             .audience-grid,
             .process-steps {
                 grid-template-columns: 1fr;
-                flex-direction: column;
             }
 
             .pricing-item {
@@ -537,20 +543,21 @@
                     <span class="pricing-value">100 – 200 €</span>
                 </div>
                 <p style="text-align: center; font-size: 0.85rem; font-style: italic; color: #888; margin-top: 25px;">
-                    *Ціни можуть змінюватися залежно від складності та терміновості.
+                    *Ціни можуть змінюватися залежно від складності програми та терміновості.
                 </p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 class="section-title reveal" style="font-size: 2rem;">Зв'яжіться зі мною</h2>
+        <h2 class="section-title reveal">Зв'яжіться зі мною</h2>
         <div class="contact-links reveal">
             <a href="#" class="contact-link">Telegram</a>
             <a href="#" class="contact-link">WhatsApp</a>
             <a href="mailto:nadiia@example.com" class="contact-link">Email</a>
         </div>
-        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.
+            PRESERVING ARTISTRY.</p>
     </footer>
 
     <script>
