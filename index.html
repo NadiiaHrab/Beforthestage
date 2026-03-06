@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before the Stage | Музичний консультант Надія</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #121212;
+            --gold: #b8965d;
+            --ivory: #f9f7f2;
+            --soft-grey: #666;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--ivory);
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1552422535-c45813c61732?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .btn:hover { background-color: #967a4a; transform: translateY(-2px); }
+
+        /* --- Sections --- */
+        section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 40px; position: relative; }
+        h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto; }
+
+        /* --- About --- */
+        .about-text { font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto; }
+
+        /* --- Services Grid --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-bottom: 4px solid var(--gold); }
+        .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--gold); }
+        .price { font-weight: 600; font-size: 1.2rem; display: block; margin-top: 15px; }
+
+        /* --- How it works --- */
+        .steps { list-style: none; padding: 0; }
+        .steps li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .steps li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+
+        /* --- Testimonials --- */
+        .testimonials { background: var(--dark); color: white; padding: 80px 10%; text-align: center; }
+        .testimonial-item { font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 40px; }
+
+        footer { background: white; padding: 60px 10%; text-align: center; border-top: 1px solid #eee; }
+        .social-links a { margin: 0 15px; text-decoration: none; color: var(--gold); font-weight: 600; }
+
+        @media (max-width: 768px) { section { padding: 50px 5%; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>Before the Stage</h1>
+            <p>Другий професійний погляд перед сценою</p>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Коли все готово, але хочеться звучати впевнено.</p>
+            <a href="#contact" class="btn">Записатися на консультацію</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Хто я</h2>
+        <div class="about-text">
+            <p>Мене звати <strong>Надія</strong>. Я музикант із професійною освітою та досвідом виступів і конкурсів.</p>
+            <p>Я допомагаю студентам, викладачам та батькам довести виступ до цілісного звучання та впевненості перед сценою. 
+               Працюю делікатно, з повагою до вже виконаної роботи та вашого викладача.</p>
+        </div>
+    </section>
+
+    <section id="services" style="background: #f1efea;">
+        <h2>Послуги та Вартість</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Аналіз виступу</h3>
+                <p>Професійний розбір відео виступу, підсвічування сильних сторін і можливих покращень.</p>
+                <span class="price">50–70 €</span>
+            </div>
+            <div class="card">
+                <h3>Консультація перед конкурсом</h3>
+                <p>Точкові поради та останні штрихи для впевненого звучання вашої програми.</p>
+                <span class="price">80–120 €</span>
+            </div>
+            <div class="card">
+                <h3>Експрес-розбір</h3>
+                <p>Коли залишилось мало часу до виступу — швидкий аналіз та конкретні рекомендації.</p>
+                <span class="price">100–200 €</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Для кого це</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+            <div><strong>Студенти</strong> музичних закладів</div>
+            <div><strong>Викладачі</strong> (другий погляд)</div>
+            <div><strong>Батьки</strong> учнів</div>
+            <div><strong>Учасники</strong> конкурсів</div>
+        </div>
+    </section>
+
+    <section id="format">
+        <h2>Як це працює</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <ul class="steps">
+                <li>Ви надсилаєте відео виступу</li>
+                <li>Я проводжу професійний розбір</li>
+                <li>Ми зустрічаємося онлайн або обговорюємо по телефону/Telegram</li>
+                <li>Ви отримуєте письмові рекомендації для останнього штриху</li>
+            </ul>
+            <p style="margin-top: 30px; font-style: italic; border-left: 3px solid var(--gold); padding-left: 20px;">
+                Мій підхід делікатний: я не замінюю викладача, а додаю професійний погляд, який робить виступ цілісним.
+            </p>
+        </div>
+    </section>
+
+    <div class="testimonials">
+        <div class="testimonial-item">
+            "Після консультації від Надії мій виступ звучав повністю впевнено. Кожна деталь була на своєму місці."<br>
+            <small>— студентка музичної школи</small>
+        </div>
+        <div class="testimonial-item">
+            "Надія допомогла моєму учневі відчути сцену, і він отримав перше місце на конкурсі."<br>
+            <small>— викладач</small>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2>Запис на консультацію</h2>
+        <div class="social-links">
+            <a href="#">Telegram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p style="margin-top: 40px; color: #999; font-size: 0.8rem;">&copy; 2026 Before the Stage | Музичний консалтинг</p>
+    </footer>
+
+</body>
+</html>
