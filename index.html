@@ -14,7 +14,7 @@
             --gold: #b8965d;
             --ivory: #fcfbf7;
             --white: #ffffff;
-            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
@@ -31,10 +31,7 @@
             background-color: var(--ivory);
             color: var(--dark);
             line-height: 1.8;
-            /* Збільшено для легкого читання */
-            overflow-x: hidden;
             font-size: 1.1rem;
-            /* Збільшено базовий шрифт */
         }
 
         /* --- НАВІГАЦІЯ --- */
@@ -51,18 +48,18 @@
         }
 
         nav.scrolled {
-            padding: 20px 10%;
+            padding: 15px 10%;
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            letter-spacing: 4px;
+            font-size: 1.8rem;
+            letter-spacing: 8px;
             text-decoration: none;
             color: white;
-            transition: var(--transition);
+            text-transform: uppercase;
         }
 
         nav.scrolled .logo {
@@ -71,18 +68,17 @@
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: white;
-            font-size: 0.85rem;
-            /* Трішки більше */
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            transition: var(--transition);
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
         nav.scrolled .nav-links a {
@@ -93,24 +89,6 @@
             color: var(--gold) !important;
         }
 
-        .burger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .burger div {
-            width: 30px;
-            height: 1px;
-            background: white;
-            transition: 0.3s;
-        }
-
-        nav.scrolled .burger div {
-            background: var(--dark);
-        }
-
         /* --- HERO --- */
         header {
             height: 100vh;
@@ -119,7 +97,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
             color: white;
             padding: 0 20px;
@@ -127,81 +105,199 @@
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 12vw, 7rem);
-            /* Дуже великий заголовок */
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
             margin: 0;
             font-weight: 400;
             line-height: 1.1;
         }
 
-        /* --- СТИЛІ БЛОКІВ --- */
+        .hero-translation {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin: 20px 0 40px;
+        }
+
+        /* --- СТРУКТУРА --- */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 140px 20px;
+            padding: 100px 20px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 90px;
-        }
-
-        .vertical-block {
-            background: var(--white);
-            padding: 70px;
             margin-bottom: 60px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.02);
-            border-top: 1px solid rgba(184, 150, 93, 0.1);
+        }
+
+        /* --- ДЛЯ КОГО --- */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 80px;
+        }
+
+        .audience-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .audience-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        .audience-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+        }
+
+        /* --- ПОСЛУГИ --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
+            border-top: 1px solid transparent;
             transition: var(--transition);
-            /* Анімація для наведення */
         }
 
-        .vertical-block:hover {
-            transform: scale(1.02);
-            /* Легке розширення */
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.05);
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--gold);
         }
 
-        .vertical-block p {
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- ЯК ПРАЦЮЄ --- */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-dot {
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .step h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        /* --- ЦІНИ (НОВА СЕКЦІЯ) --- */
+        .pricing-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(184, 150, 93, 0.2);
+        }
+
+        .pricing-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .pricing-dots {
+            flex: 1;
+            border-bottom: 1px dotted var(--gold);
+            margin: 0 15px;
+            opacity: 0.3;
+        }
+
+        .pricing-value {
+            font-weight: 600;
+            color: var(--gold);
             font-size: 1.2rem;
         }
 
-        /* Текст всередині карток */
-
-        .gold-text {
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 1.4rem;
-            margin-top: 25px;
-            display: block;
+        /* --- ФУТЕР --- */
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            background: #fff;
         }
 
-        /* --- BUTTON --- */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin: 30px 0;
+        }
+
+        .contact-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 3px;
+        }
+
         .btn {
             display: inline-block;
-            padding: 25px 60px;
+            padding: 20px 50px;
             background-color: var(--gold);
             color: white;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
             font-weight: 600;
-            transition: var(--transition);
-            margin-top: 30px;
-        }
-
-        .btn:hover {
-            background: #967a4a;
-            transform: translateY(-5px);
+            margin-top: 20px;
+            transition: 0.4s;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
         }
 
         .reveal.active {
@@ -209,53 +305,27 @@
             transform: translateY(0);
         }
 
-        /* --- FOOTER & CONTACTS --- */
-        footer {
-            padding: 150px 20px;
-            text-align: center;
-            background: #fff;
-            border-top: 1px solid #f0f0f0;
-        }
+        @media (max-width: 850px) {
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin: 50px 0;
-        }
+            .services-grid,
+            .audience-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
 
-        .contact-link {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 5px;
-            transition: 0.3s;
-        }
-
-        .contact-link:hover {
-            color: var(--gold);
-        }
-
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
-            .burger {
-                display: flex;
+            .pricing-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
             }
 
-            .vertical-block {
-                padding: 40px 25px;
-            }
-
-            .hero-title {
-                font-size: 3.5rem;
+            .pricing-dots {
+                display: none;
             }
         }
     </style>
@@ -265,86 +335,156 @@
 
     <nav id="navbar">
         <a href="#" class="logo">BTS</a>
-        <div class="nav-links" id="navLinks">
+        <div class="nav-links">
             <a href="#about">Хто я</a>
+            <a href="#for-whom">Для кого</a>
             <a href="#services">Послуги</a>
-            <a href="#workflow">Процес</a>
+            <a href="#pricing">Ціни</a>
             <a href="#contact">Контакти</a>
-        </div>
-        <div class="burger" id="burger">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
     </nav>
 
     <header>
         <div class="reveal active">
-            <p style="letter-spacing: 7px; text-transform: uppercase; font-weight: 300; margin-bottom: 20px;">Надія |
-                Консультант</p>
             <h1 class="hero-title">Before the Stage</h1>
-            <a href="#contact" class="btn">Забронювати час</a>
+            <div class="hero-translation">— Перед сценою —</div>
+            <p style="letter-spacing: 4px; text-transform: uppercase; font-weight: 200; font-size: 0.8rem;">Музичний
+                консультант для піаністів</p>
+            <a href="#contact" class="btn">Консультація</a>
         </div>
     </header>
 
     <section class="container reveal" id="about">
         <h2 class="section-title">Хто я</h2>
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>Я Надія — музикант із професійною освітою та досвідом виступів. Я допомагаю студентам, викладачам та
-                батькам довести виступ до досконалості.</p>
-            <p class="gold-text" style="font-style: italic;">Делікатний підхід та повага до вашого вчителя.</p>
+            <p>Я Надія — музикант із професійною освітою. Допомагаю піаністам довести програму до досконалості, додаючи
+                впевненості перед виходом на сцену.</p>
         </div>
     </section>
 
-    <section id="services" style="background: #f8f6f2;">
+    <section id="for-whom" style="background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title reveal">Для кого це важливо</h2>
+            <div class="audience-grid">
+                <div class="audience-item reveal">
+                    <div class="audience-number">01</div>
+                    <div class="audience-text">
+                        <h3>Студенти</h3>
+                        <p>Музичних закладів та шкіл, які прагнуть вийти за межі академічних стандартів.</p>
+                    </div>
+                </div>
+                <div class="audience-item reveal">
+                    <div class="audience-number">02</div>
+                    <div class="audience-text">
+                        <h3>Викладачі</h3>
+                        <p>Яким потрібен свіжий, незалежний професійний погляд на підготовку учня.</p>
+                    </div>
+                </div>
+                <div class="audience-item reveal">
+                    <div class="audience-number">03</div>
+                    <div class="audience-text">
+                        <h3>Батьки</h3>
+                        <p>Які прагнуть професійної підтримки для впевненого виступу дитини.</p>
+                    </div>
+                </div>
+                <div class="audience-item reveal">
+                    <div class="audience-number">04</div>
+                    <div class="audience-text">
+                        <h3>Конкурсанти</h3>
+                        <p>Усі, хто готується до міжнародних конкурсів або важливих іспитів.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background-color: #f8f6f2;">
         <div class="container">
             <h2 class="section-title reveal">Послуги</h2>
-
-            <div class="vertical-block reveal">
-                <span style="color:var(--gold); font-weight:600; letter-spacing:2px;">01</span>
-                <h3 style="font-family:'Playfair Display'; font-size: 2.5rem; margin: 15px 0;">Аналіз виступу</h3>
-                <p>Професійний розбір відео виступу, підсвічування сильних сторін і можливих покращень для впевненого
-                    звучання.</p>
-                <div class="gold-text">50–70 €</div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">АНАЛІЗ</span>
+                    <h3>Аналіз виступу</h3>
+                    <p>Професійний розбір відео, підсвічування сильних сторін і можливих покращень.</p>
+                </div>
+                <div class="service-card">
+                    <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">ПІДГОТОВКА</span>
+                    <h3>Консультація</h3>
+                    <p>Точкові поради та художні штрихи для впевненого та яскравого звучання.</p>
+                </div>
+                <div class="service-card">
+                    <span style="color:var(--gold); font-size: 0.6rem; letter-spacing: 2px;">ТЕРМІНОВО</span>
+                    <h3>Експрес-розбір</h3>
+                    <p>Швидкий аналіз та конкретні рекомендації, коли залишилось мало часу.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="vertical-block reveal">
-                <span style="color:var(--gold); font-weight:600; letter-spacing:2px;">02</span>
-                <h3 style="font-family:'Playfair Display'; font-size: 2.5rem; margin: 15px 0;">Консультація перед
-                    конкурсом</h3>
-                <p>Точкові поради та останні штрихи, що додають виступу цілісності та сценічного блиску.</p>
-                <div class="gold-text">80–120 €</div>
+    <section id="format" style="background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title reveal">Як це працює</h2>
+            <div class="process-steps reveal">
+                <div class="step">
+                    <div class="step-dot">01</div>
+                    <h4>Матеріал</h4>
+                    <p>Ви надсилаєте відео виступу або запис репетиції.</p>
+                </div>
+                <div class="step">
+                    <div class="step-dot">02</div>
+                    <h4>Аналіз</h4>
+                    <p>Я проводжу детальний розбір вашого виконання.</p>
+                </div>
+                <div class="step">
+                    <div class="step-dot">03</div>
+                    <h4>Фідбек</h4>
+                    <p>Зустрічаємось онлайн або обговорюємо в Telegram.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="vertical-block reveal">
-                <span style="color:var(--gold); font-weight:600; letter-spacing:2px;">03</span>
-                <h3 style="font-family:'Playfair Display'; font-size: 2.5rem; margin: 15px 0;">Експрес-розбір</h3>
-                <p>Коли часу обмаль — швидкий аналіз та конкретні рекомендації, щоб ви почувалися впевнено вже сьогодні.
+    <section id="pricing" style="background-color: #fcfbf7; border-top: 1px solid rgba(0,0,0,0.03);">
+        <div class="container">
+            <h2 class="section-title reveal">Вартість</h2>
+            <div class="pricing-list reveal">
+                <div class="pricing-item">
+                    <span class="pricing-name">Аналіз відео + консультація</span>
+                    <span class="pricing-dots"></span>
+                    <span class="pricing-value">50 – 70 €</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-name">Перед конкурсом / останній штрих</span>
+                    <span class="pricing-dots"></span>
+                    <span class="pricing-value">80 – 120 €</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-name">Термінова консультація</span>
+                    <span class="pricing-dots"></span>
+                    <span class="pricing-value">100 – 200 €</span>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.85rem; font-style: italic; color: #888; text-align: center;">
+                    *Ціни можуть змінюватися залежно від складності програми та терміновості.
                 </p>
-                <div class="gold-text">100–200 €</div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 class="section-title reveal">Зв'яжіться зі мною</h2>
+        <h2 class="section-title reveal" style="font-size: 2rem;">Зв'яжіться зі мною</h2>
         <div class="contact-links reveal">
-            <a href="https://t.me/yourname" class="contact-link">Telegram</a>
-            <a href="https://wa.me/yourphonenumber" class="contact-link">WhatsApp</a>
-            <a href="mailto:yourname@email.com" class="contact-link">Email</a>
+            <a href="#" class="contact-link">Telegram</a>
+            <a href="#" class="contact-link">WhatsApp</a>
+            <a href="#" class="contact-link">Email</a>
         </div>
-        <p style="margin-top: 80px; font-size: 0.8rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE. ALL
-            RIGHTS RESERVED.</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.</p>
     </footer>
 
     <script>
         const navbar = document.getElementById('navbar');
         window.onscroll = () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
             reveal();
         };
 
@@ -353,14 +493,11 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+                if (elementTop < windowHeight - 100) reveals[i].classList.add("active");
             }
         }
+        reveal();
     </script>
-
 </body>
 
 </html>
