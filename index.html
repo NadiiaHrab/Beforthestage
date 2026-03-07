@@ -86,7 +86,6 @@
             color: var(--dark);
         }
 
-        /* МЕНЮ БУРГЕР */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -155,7 +154,46 @@
             margin-bottom: 45px;
         }
 
-        /* --- ДЛЯ КОГО (Повний текст) --- */
+        /* --- БЛОК 2: ЯК Я ПРАЦЮЮ (Філософія) --- */
+        .work-philosophy {
+            background-color: var(--white);
+            border-left: 3px solid var(--gold);
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .work-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .work-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .work-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .approach-note {
+            font-style: italic;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 20px;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* --- БЛОК 3: ДЛЯ КОГО --- */
         .audience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -189,7 +227,7 @@
             margin: 0;
         }
 
-        /* --- ПОСЛУГИ (Повний текст) --- */
+        /* --- БЛОК 4: ПОСЛУГИ --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -226,7 +264,7 @@
             margin: 0;
         }
 
-        /* --- ЯК ЦЕ ПРАЦЮЄ (Повернуто) --- */
+        /* --- БЛОК 5: ФОРМАТ --- */
         .process-steps {
             display: flex;
             justify-content: space-between;
@@ -263,7 +301,7 @@
             color: #666;
         }
 
-        /* --- ЦІНИ (З крапками та приміткою) --- */
+        /* --- БЛОК 6: ЦІНИ --- */
         .pricing-list {
             max-width: 800px;
             margin: 0 auto;
@@ -343,7 +381,7 @@
             transform: translateY(0);
         }
 
-        /* --- АДАПТИВНІСТЬ (Планшет + Мобільні) --- */
+        /* --- АДАПТИВНІСТЬ --- */
         @media (max-width: 950px) {
             .menu-toggle {
                 display: flex;
@@ -370,7 +408,7 @@
 
             .nav-links a {
                 color: var(--dark) !important;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .nav-active span:nth-child(1) {
@@ -402,6 +440,10 @@
             .pricing-dots {
                 display: none;
             }
+
+            .work-philosophy {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -415,6 +457,7 @@
         </div>
         <div class="nav-links" id="nav-list">
             <a href="#about">Хто я</a>
+            <a href="#how-i-work">Як я працюю</a>
             <a href="#for-whom">Для кого</a>
             <a href="#services">Послуги</a>
             <a href="#format">Формат</a>
@@ -441,6 +484,29 @@
         </div>
     </section>
 
+    <section id="how-i-work" class="container reveal">
+        <h2 class="section-title">Як я працюю</h2>
+        <div class="work-philosophy">
+            <p>Моя робота полягає у уважному професійному погляді на виступ перед важливою подією — конкурсом, концертом
+                або прослуховуванням. Іноді навіть добре підготовлений виступ потребує ще одного слуху, щоб побачити
+                деталі, які залишилися непоміченими.</p>
+            <p>Я працюю зі студентами, батьками та викладачами, коли потрібна впевненість перед сценою:</p>
+            <ul class="work-list">
+                <li><strong>Студенти</strong> — хочуть відчути більшу впевненість у своєму виконанні.</li>
+                <li><strong>Батьки</strong> — прагнуть розуміння, що підготовка рухається у правильному напрямку.</li>
+                <li><strong>Викладачі</strong> — інколи потребують стороннього професійного погляду.</li>
+            </ul>
+            <div class="approach-note">
+                Мій підхід ґрунтується на делікатності та повазі до вже виконаної роботи. Я не оцінюю і не змінюю
+                напрямок підготовки. Моє завдання — підсилити результат, допомогти почути більше і звернути увагу на
+                деталі, які можуть зробити виступ ціліснішим.
+                <br><br>
+                <strong>Я працюю з повагою до викладача і вже вкладеної праці. Моя роль — додати фінальну якість і
+                    допомогти виконавцю вийти на сцену з більшою впевненістю.</strong>
+            </div>
+        </div>
+    </section>
+
     <section id="for-whom" style="background: white;">
         <div class="container">
             <h2 class="section-title reveal">Для кого це важливо</h2>
@@ -449,28 +515,28 @@
                     <div class="audience-number">01</div>
                     <div class="audience-text">
                         <h3>Студенти</h3>
-                        <p>Музичних закладів та шкіл, які прагнуть вийти за межі академічних стандартів.</p>
+                        <p>Ті, хто прагне вийти за межі академічних стандартів та відчути більшу впевненість.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">02</div>
                     <div class="audience-text">
                         <h3>Викладачі</h3>
-                        <p>Яким потрібен свіжий, незалежний професійний погляд на підготовку учня.</p>
+                        <p>Кому потрібен свіжий, незалежний професійний погляд на підготовку учня.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">03</div>
                     <div class="audience-text">
                         <h3>Батьки</h3>
-                        <p>Які прагнуть професійної підтримки для впевненого виступу своєї дитини.</p>
+                        <p>Для розуміння прогресу та професійної підтримки дитини перед виступом.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">04</div>
                     <div class="audience-text">
                         <h3>Конкурсанти</h3>
-                        <p>Усі, хто готується до міжнародних конкурсів, концертів або важливих іспитів.</p>
+                        <p>Усі, хто готується до міжнародних конкурсів, концертів або іспитів.</p>
                     </div>
                 </div>
             </div>
@@ -500,51 +566,39 @@
         </div>
     </section>
 
-    <section id="format" style="background: white;">
-        <div class="container">
-            <h2 class="section-title reveal">Як це працює</h2>
-            <div class="process-steps reveal">
-                <div class="step">
-                    <div class="step-dot">01</div>
-                    <h4>Матеріал</h4>
-                    <p>Ви надсилаєте відео виступу або запис репетиції.</p>
-                </div>
-                <div class="step">
-                    <div class="step-dot">02</div>
-                    <h4>Аналіз</h4>
-                    <p>Я проводжу детальний розбір вашого виконання.</p>
-                </div>
-                <div class="step">
-                    <div class="step-dot">03</div>
-                    <h4>Фідбек</h4>
-                    <p>Зустрічаємось онлайн або обговорюємо деталі в Telegram.</p>
-                </div>
+    <section id="format" class="container reveal">
+        <h2 class="section-title">Як це працює</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-dot">01</div>
+                <h4>Матеріал</h4>
+                <p>Ви надсилаєте відео виступу або запис репетиції.</p>
+            </div>
+            <div class="step">
+                <div class="step-dot">02</div>
+                <h4>Аналіз</h4>
+                <p>Я проводжу детальний розбір вашого виконання.</p>
+            </div>
+            <div class="step">
+                <div class="step-dot">03</div>
+                <h4>Фідбек</h4>
+                <p>Зустрічаємось онлайн або обговорюємо деталі в Telegram.</p>
             </div>
         </div>
     </section>
 
-    <section id="pricing" style="background: #fcfbf7;">
+    <section id="pricing" style="background: white;">
         <div class="container">
             <h2 class="section-title reveal">Вартість</h2>
             <div class="pricing-list reveal">
-                <div class="pricing-item">
-                    <span class="pricing-name">Аналіз відео + консультація</span>
-                    <span class="pricing-dots"></span>
-                    <span class="pricing-value">50 – 70 €</span>
-                </div>
-                <div class="pricing-item">
-                    <span class="pricing-name">Перед конкурсом / останній штрих</span>
-                    <span class="pricing-dots"></span>
-                    <span class="pricing-value">80 – 120 €</span>
-                </div>
-                <div class="pricing-item">
-                    <span class="pricing-name">Термінова консультація</span>
-                    <span class="pricing-dots"></span>
-                    <span class="pricing-value">100 – 200 €</span>
-                </div>
+                <div class="pricing-item"><span>Аналіз відео + консультація</span><span
+                        class="pricing-dots"></span><span class="pricing-value">50 – 70 €</span></div>
+                <div class="pricing-item"><span>Перед конкурсом / останній штрих</span><span
+                        class="pricing-dots"></span><span class="pricing-value">80 – 120 €</span></div>
+                <div class="pricing-item"><span>Термінова консультація</span><span class="pricing-dots"></span><span
+                        class="pricing-value">100 – 200 €</span></div>
                 <p style="text-align: center; font-size: 0.85rem; font-style: italic; color: #888; margin-top: 25px;">
-                    *Ціни можуть змінюватися залежно від складності програми та терміновості.
-                </p>
+                    *Ціни можуть змінюватися залежно від складності програми та терміновості.</p>
             </div>
         </div>
     </section>
@@ -556,8 +610,7 @@
             <a href="#" class="contact-link">WhatsApp</a>
             <a href="mailto:nadiia@example.com" class="contact-link">Email</a>
         </div>
-        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.
-            PRESERVING ARTISTRY.</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.</p>
     </footer>
 
     <script>
