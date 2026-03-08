@@ -31,7 +31,7 @@
             background-color: var(--ivory);
             color: var(--dark);
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         /* --- НАВІГАЦІЯ --- */
@@ -103,12 +103,10 @@
             background-color: white;
             border-radius: 3px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
         nav.scrolled .menu-toggle span {
             background-color: var(--dark);
-            box-shadow: none;
         }
 
         /* --- HERO --- */
@@ -144,17 +142,42 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 70px 20px;
+            padding: 80px 20px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
-        /* --- БЛОК 2: ЯК Я ПРАЦЮЮ (Філософія) --- */
+        /* --- БЛОК 1: ХТО Я (Оновлено) --- */
+        .about-content {
+            text-align: left;
+            max-width: 850px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .about-content p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .about-highlight {
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding: 30px 0;
+            margin: 40px 0;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        /* --- БЛОК 2: ЯК Я ПРАЦЮЮ --- */
         .work-philosophy {
             background-color: var(--white);
             border-left: 3px solid var(--gold);
@@ -174,7 +197,7 @@
             margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .work-list li::before {
@@ -182,15 +205,6 @@
             position: absolute;
             left: 0;
             color: var(--gold);
-        }
-
-        .approach-note {
-            font-style: italic;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            margin-top: 20px;
-            color: #555;
-            font-size: 1rem;
         }
 
         /* --- БЛОК 3: ДЛЯ КОГО --- */
@@ -211,20 +225,6 @@
             font-size: 2rem;
             color: var(--gold);
             opacity: 0.4;
-            font-style: italic;
-        }
-
-        .audience-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin: 0 0 8px 0;
-            font-weight: 400;
-        }
-
-        .audience-text p {
-            font-size: 0.95rem;
-            color: #555;
-            margin: 0;
         }
 
         /* --- БЛОК 4: ПОСЛУГИ --- */
@@ -238,7 +238,6 @@
             background: var(--white);
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
             border-top: 1px solid transparent;
             transition: var(--transition);
         }
@@ -246,22 +245,6 @@
         .service-card:hover {
             transform: translateY(-5px);
             border-top-color: var(--gold);
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
-            margin-bottom: 15px;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 0;
         }
 
         /* --- БЛОК 5: ФОРМАТ --- */
@@ -286,22 +269,9 @@
             justify-content: center;
             margin: 0 auto 15px;
             color: var(--gold);
-            font-family: 'Playfair Display', serif;
         }
 
-        .step h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .step p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* --- БЛОК 6: ЦІНИ --- */
+        /* --- ЦІНИ --- */
         .pricing-list {
             max-width: 800px;
             margin: 0 auto;
@@ -315,23 +285,11 @@
             border-bottom: 1px solid rgba(184, 150, 93, 0.2);
         }
 
-        .pricing-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
-            flex: 1;
-        }
-
         .pricing-dots {
             flex: 1;
             border-bottom: 1px dotted var(--gold);
             margin: 0 15px;
             opacity: 0.3;
-        }
-
-        .pricing-value {
-            font-weight: 600;
-            color: var(--gold);
-            font-size: 1.15rem;
         }
 
         /* --- ФУТЕР --- */
@@ -367,7 +325,6 @@
             font-size: 0.8rem;
             font-weight: 600;
             margin-top: 20px;
-            transition: 0.3s;
         }
 
         .reveal {
@@ -441,8 +398,8 @@
                 display: none;
             }
 
-            .work-philosophy {
-                padding: 25px;
+            .about-content p {
+                text-align: left;
             }
         }
     </style>
@@ -478,31 +435,51 @@
 
     <section class="container reveal" id="about">
         <h2 class="section-title">Хто я</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.25rem; font-weight: 300;">
-            <p>Я Надія — музикант із професійною освітою. Допомагаю піаністам довести програму до досконалості, додаючи
-                впевненості перед виходом на сцену.</p>
+        <div class="about-content">
+            <p>Я народилася у місті Коломия на заході України. Мій шлях у музиці розпочався у п’ять років, коли я вперше
+                сіла за фортепіано. З того часу музика стала важливою частиною мого життя і професії.</p>
+
+            <p>У 2011 році завершила Київський інститут музики ім. Р. М. Глієра (клас викладача-методиста Ірини
+                Гаврилюк). Професійну освіту продовжила в Національній музичній академії України ім. П.І.Чайковського
+                (клас кандидата мистецтвознавства PhD, доцента, професора, завідувачки кафедри), де отримала ступінь
+                магістра музичного мистецтва.</p>
+
+            <div class="about-highlight">
+                «У своїй роботі поєдную виконавський досвід, педагогіку та уважне ставлення до музичної інтерпретації»
+            </div>
+
+            <p>Я виступала з сольними концертами та співпрацювала із симфонічними оркестрами
+                України, серед яких Національний академічний заслужений симфонічний оркестр України, Державний
+                Академічний естрадно-симфонічний оркестр України та Оркестр Дніпропетровської філармонії. Я є лауреаткою
+                всеукраїнських та міжнародних конкурсів.</p>
+
+            <p>Маю досвід міжнародної концертної діяльності — виступала на круїзному лайнері у складі класичного
+                камерного квартету, виконуючи програму класичної музики для міжнародної аудиторії.</p>
+
+            <p>Моя педагогічна практика включає роботу в музичній школі та Івано-Франківському фаховому музичному
+                коледжі імені Дениса Січинського. Я працюю як з дітьми, так і з дорослими музикантами, допомагаючи їм
+                розвивати музичне мислення, виконавську впевненість та глибше розуміння нотного тексту.</p>
+
+            <p>Окрім виконавства, я працювала музичним редактором на Українському радіо та брала участь у фестивалях як
+                ведуча та модератор. Весь цей різносторонній досвід дозволяє мені бачити виступ не лише з боку піаніста,
+                а й з позиції слухача та критика.</p>
         </div>
     </section>
 
     <section id="how-i-work" class="container reveal">
         <h2 class="section-title">Як я працюю</h2>
         <div class="work-philosophy">
-            <p>Моя робота полягає у уважному професійному погляді на виступ перед важливою подією — конкурсом, концертом
-                або прослуховуванням. Іноді навіть добре підготовлений виступ потребує ще одного слуху, щоб побачити
-                деталі, які залишилися непоміченими.</p>
-            <p>Я працюю зі студентами, батьками та викладачами, коли потрібна впевненість перед сценою:</p>
+            <p>Мій підхід ґрунтується на делікатності та повазі до вже виконаної роботи. Я не оцінюю і не змінюю
+                напрямок підготовки, а допомагаю побачити деталі, які могли залишитися непоміченими.</p>
             <ul class="work-list">
-                <li><strong>Студенти</strong> — хочуть відчути більшу впевненість у своєму виконанні.</li>
-                <li><strong>Батьки</strong> — прагнуть розуміння, що підготовка рухається у правильному напрямку.</li>
-                <li><strong>Викладачі</strong> — інколи потребують стороннього професійного погляду.</li>
+                <li><strong>Студенти</strong> — набуття впевненості та вихід за межі стандартів.</li>
+                <li><strong>Батьки</strong> — розуміння, що підготовка рухається у правильному напрямку.</li>
+                <li><strong>Викладачі</strong> — свіжий сторонній погляд на підготовку учня.</li>
             </ul>
-            <div class="approach-note">
-                Мій підхід ґрунтується на делікатності та повазі до вже виконаної роботи. Я не оцінюю і не змінюю
-                напрямок підготовки. Моє завдання — підсилити результат, допомогти почути більше і звернути увагу на
-                деталі, які можуть зробити виступ ціліснішим.
-                <br><br>
-                <strong>Я працюю з повагою до викладача і вже вкладеної праці. Моя роль — додати фінальну якість і
-                    допомогти виконавцю вийти на сцену з більшою впевненістю.</strong>
+            <div
+                style="font-style: italic; border-top: 1px solid #eee; padding-top: 20px; color: #555; font-size: 0.95rem;">
+                Я працюю з повагою до викладача і вже вкладеної праці. Моя роль — додати фінальну якість і допомогти
+                виконавцю вийти на сцену з більшою впевненістю.
             </div>
         </div>
     </section>
@@ -515,28 +492,28 @@
                     <div class="audience-number">01</div>
                     <div class="audience-text">
                         <h3>Студенти</h3>
-                        <p>Ті, хто прагне вийти за межі академічних стандартів та відчути більшу впевненість.</p>
+                        <p>Для тих, хто хоче почуватися впевненіше на сцені.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">02</div>
                     <div class="audience-text">
                         <h3>Викладачі</h3>
-                        <p>Кому потрібен свіжий, незалежний професійний погляд на підготовку учня.</p>
+                        <p>Кому потрібен професійний погляд зі сторони.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">03</div>
                     <div class="audience-text">
                         <h3>Батьки</h3>
-                        <p>Для розуміння прогресу та професійної підтримки дитини перед виступом.</p>
+                        <p>Для підтримки дитини перед важливою подією.</p>
                     </div>
                 </div>
                 <div class="audience-item reveal">
                     <div class="audience-number">04</div>
                     <div class="audience-text">
                         <h3>Конкурсанти</h3>
-                        <p>Усі, хто готується до міжнародних конкурсів, концертів або іспитів.</p>
+                        <p>Підготовка до міжнародних викликів.</p>
                     </div>
                 </div>
             </div>
@@ -550,17 +527,17 @@
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.65rem; letter-spacing: 2px;">АНАЛІЗ</span>
                     <h3>Аналіз виступу</h3>
-                    <p>Професійний розбір відео виступу, підсвічування сильних сторін і можливих покращень.</p>
+                    <p>Професійний розбір відео виступу та рекомендації.</p>
                 </div>
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.65rem; letter-spacing: 2px;">ПІДГОТОВКА</span>
                     <h3>Консультація перед конкурсом</h3>
-                    <p>Точкові поради та останні художні штрихи для впевненого та яскравого звучання.</p>
+                    <p>Останні художні штрихи для яскравого звучання.</p>
                 </div>
                 <div class="service-card">
                     <span style="color:var(--gold); font-size: 0.65rem; letter-spacing: 2px;">ТЕРМІНОВО</span>
                     <h3>Експрес-розбір</h3>
-                    <p>Коли залишилось мало часу — швидкий аналіз та конкретні рекомендації для результату.</p>
+                    <p>Швидкий аналіз, коли до виступу залишилося мало часу.</p>
                 </div>
             </div>
         </div>
@@ -572,17 +549,17 @@
             <div class="step">
                 <div class="step-dot">01</div>
                 <h4>Матеріал</h4>
-                <p>Ви надсилаєте відео виступу або запис репетиції.</p>
+                <p>Надсилаєте відео виступу.</p>
             </div>
             <div class="step">
                 <div class="step-dot">02</div>
                 <h4>Аналіз</h4>
-                <p>Я проводжу детальний розбір вашого виконання.</p>
+                <p>Я проводжу детальний розбір.</p>
             </div>
             <div class="step">
                 <div class="step-dot">03</div>
                 <h4>Фідбек</h4>
-                <p>Зустрічаємось онлайн або обговорюємо деталі в Telegram.</p>
+                <p>Обговорюємо деталі онлайн.</p>
             </div>
         </div>
     </section>
@@ -593,12 +570,10 @@
             <div class="pricing-list reveal">
                 <div class="pricing-item"><span>Аналіз відео + консультація</span><span
                         class="pricing-dots"></span><span class="pricing-value">50 – 70 €</span></div>
-                <div class="pricing-item"><span>Перед конкурсом / останній штрих</span><span
-                        class="pricing-dots"></span><span class="pricing-value">80 – 120 €</span></div>
+                <div class="pricing-item"><span>Перед конкурсом / штрих</span><span class="pricing-dots"></span><span
+                        class="pricing-value">80 – 120 €</span></div>
                 <div class="pricing-item"><span>Термінова консультація</span><span class="pricing-dots"></span><span
                         class="pricing-value">100 – 200 €</span></div>
-                <p style="text-align: center; font-size: 0.85rem; font-style: italic; color: #888; margin-top: 25px;">
-                    *Ціни можуть змінюватися залежно від складності програми та терміновості.</p>
             </div>
         </div>
     </section>
@@ -610,7 +585,7 @@
             <a href="#" class="contact-link">WhatsApp</a>
             <a href="mailto:nadiia@example.com" class="contact-link">Email</a>
         </div>
-        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px;">© 2026 BEFORE THE STAGE.</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4;">© 2026 BEFORE THE STAGE. PRESERVING ARTISTRY.</p>
     </footer>
 
     <script>
